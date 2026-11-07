@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Examination Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">EX</span><span>Exam<span class="brand-light">Portal</span></span></div>
+    <span class="top-note">ONLINE ASSESSMENT</span>
+  </header>
+
+  <main class="container">
+    <section id="loginView" class="panel login-panel">
+      <div class="eyebrow">STUDENT ACCESS</div>
+      <h1>Welcome back</h1>
+      <p class="muted">Sign in to start your online examination.</p>
+      <form id="loginForm">
+        <label for="studentId">Student ID</label>
+        <input id="studentId" name="studentId" type="text" placeholder="Enter your student ID" required>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Enter your password" required>
+        <button class="primary-btn" type="submit">Login to examination</button>
+        <p id="loginMessage" class="message" role="alert"></p>
+      </form>
+      <div class="demo-hint"><strong>Demo login</strong><br>Student ID: <code>student</code> &nbsp; Password: <code>1234</code></div>
+    </section>
+
+    <section id="examView" class="hidden">
+      <div class="exam-heading">
+        <div><div class="eyebrow">GENERAL KNOWLEDGE</div><h1>Online Examination</h1><p class="muted">Answer all questions. Your result is calculated after submission.</p></div>
+        <div class="timer-card"><span>TIME REMAINING</span><strong id="timer">05:00</strong></div>
+      </div>
+      <div class="exam-meta"><span id="studentWelcome">Student</span><span>5 Questions</span><span>5 Marks</span></div>
+      <form id="examForm">
+        <div id="questions"></div>
+        <div class="submit-row">
+          <span class="muted small">Review your answers before submitting.</span>
+          <button id="submitBtn" class="primary-btn" type="submit">Submit examination</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="resultView" class="panel result-panel hidden">
+      <div class="result-icon">✓</div>
+      <div class="eyebrow">EXAMINATION COMPLETED</div>
+      <h1>Your result</h1>
+      <div class="score" id="score">0/5</div>
+      <p id="resultText" class="muted"></p>
+      <div id="resultDetails" class="result-details"></div>
+      <button id="logoutBtn" class="primary-btn">Back to login</button>
+    </section>
+  </main>
+  <footer>Online Examination Website · Student assessment demo</footer>
+  <script src="script.js"></script>
+</body>
+</html>
